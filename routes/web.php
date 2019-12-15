@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::get('/dashboard', 'LoginController@index');
 
 Route::resource('/category','CategoryController');
+

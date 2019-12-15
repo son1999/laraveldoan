@@ -32,11 +32,39 @@
                                 <td><span class="badge badge-success"> Hiển Thị </span></td>
                             @endif
                             <td>
-                                <a href=""><i class="fas fa-edit text-primary"></i></a>
-                                &nbsp;
-                                <a href=""> <i class="fas fa-trash text-danger"></i></a>
+                                <a href="{{route('category.edit',$value->id)}}"><i class="fas fa-edit text-primary"></i></a>
+                                <a href="" data-toggle="modal"
+                                   data-target="#exampleModal{{$value->id}}"><i
+                                        class="fas fa-trash text-danger"></i></a>
                             </td>
                         </tr>
+                        <div class="modal fade" id="exampleModal{{$value->id}}" tabindex="-1" role="dialog"
+                             aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <form action="{{route('category.destroy',$value->id)}}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Xóa danh
+                                                mục {{$value->cate_name}}</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Bạn có chắc chắn muốn xóa?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-danger">Xóa</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     @endforeach
                     </tbody>
                 </table>

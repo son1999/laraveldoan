@@ -9,9 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="assets/frontend/plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
-
-
+    <link rel="stylesheet" href="assets/backend/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="assets/backend/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="assets/backend/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/backend/css/buttons.bootstrap4.min.css>
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->
@@ -86,12 +87,16 @@
 <script src="assets/frontend/dist/js/adminlte.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="assets/frontend/dist/js/pages/dashboard.js"></script>
-<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+<script type="text/javascript" charset="utf8" src="assets/backend/js/jquery.dataTables.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="assets/frontend/dist/js/demo.js"></script>
+<script src="assets/backend/js/dataTables.bootstrap4.min.js"></script>
+<script src="assets/backend/js/buttons.bootstrap4.min.js"></script>
 <script type="text/javascript">
     $(document).ready( function () {
         $('#table_id').DataTable();
+        table.buttons().container()
+            .appendTo( '#example_wrapper .col-md-6:eq(0)' );
     } );
 </script>
 </body>
